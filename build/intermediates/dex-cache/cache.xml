@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/valbert/.android/build-cache/1074447bea4b1f244b3629c739aa0324ebc1f076/output/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/valbert/StudioProjects/contato/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_546322362a9d384b6059bc72e50906d7c1482fb3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/valbert/.android/build-cache/9f2eecffe59a9a6ed9f8bed57b437c55bd8d563f/output/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/valbert/StudioProjects/contato/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_35f0d4911843d0f444a79cc1f548c48b395e841c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/valbert/.android/build-cache/c1a64ebfd5470227922d5e22c3e0bd5992da528a/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="/Users/valbert/StudioProjects/contato/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3c807f0acb71bde7eb1c2e9e23f59e3f2f7abdde/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/valbert/Library/Android/sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="/Users/valbert/StudioProjects/contato/app/build/intermediates/transforms/dex/debug/folders/1000/10/constraint-layout-solver-1.0.2_feb728fdfee8a15fdc962544701b6143f8562708/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/valbert/.android/build-cache/06e1ead780490dd62f178591a1e40f24b90371c7/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/valbert/StudioProjects/contato/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_7fbd5a202fe7eb720121abf6c4744c340850f20d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/valbert/.android/build-cache/cdfe24328cc7fa187c8e54ae363707ffd7d0e3b5/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/Users/valbert/StudioProjects/contato/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4064bf76625133562438ab1ea2b3a032c23793f4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/valbert/.android/build-cache/649c5354acffbe8522a531e247b4ecade8202785/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/valbert/StudioProjects/contato/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_31d8cb1372d58f6fa86bedac195dbfeff0434db0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/valbert/.android/build-cache/06e1ead780490dd62f178591a1e40f24b90371c7/output/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/Users/valbert/StudioProjects/contato/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_d9b446f3086661531aa26994ab3d38f5f89b7262/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/valbert/StudioProjects/contato/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
+        <dex dex="/Users/valbert/StudioProjects/contato/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_33d642afac4bd458ee1bf12f68ae09fde8900a49/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/valbert/StudioProjects/contato/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="e77e75df9cf6c239c72fd866a4ad8019b0424408">
+        <dex dex="/Users/valbert/StudioProjects/contato/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_f92ec3f48d82b087dddd6941c67147fe10d48267/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/valbert/.android/build-cache/9f2eecffe59a9a6ed9f8bed57b437c55bd8d563f/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Users/valbert/StudioProjects/contato/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_17b2b6e88f366021eca12941b435c915efb9dc24/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/valbert/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/Users/valbert/StudioProjects/contato/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_3270448b30c94f567ebccc070a2585189d584b80/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/valbert/.android/build-cache/988e1c85b12bbb8ab1e565d770677ce16a932640/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/Users/valbert/StudioProjects/contato/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_009728faa6e1580c5de70a5c16d815a5dde7f30e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/valbert/.android/build-cache/b031b8b52c22512b477c48e27019cf05ba34a217/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="/Users/valbert/StudioProjects/contato/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3abd33426472d83f91418852d0d0cbda47abf55b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/valbert/.android/build-cache/abe86f6fffc73fc7ab70848ca1ecd3d4212d9104/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/valbert/StudioProjects/contato/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e014d96006304e4367690a2163e56915d411285a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/valbert/.android/build-cache/abe86f6fffc73fc7ab70848ca1ecd3d4212d9104/output/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Users/valbert/StudioProjects/contato/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_3033af2efd3fb2e59f3132bf48a9845b6f123937/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/valbert/.android/build-cache/01ebc8f0d2dbd2793ea82a86bbd8c79e2e6620d1/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/valbert/StudioProjects/contato/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3bf2671a479f4231d86406c7d4550c146cb64155/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/valbert/.android/build-cache/7b9578d2b6b21bf8f0ab1c1c06361679b705aa4c/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="/Users/valbert/StudioProjects/contato/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_89938f01ac389eae3036b8723d254e2be4fb63df/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/valbert/.android/build-cache/6252645fc34526052a9ce4d17cb14121e9222ba6/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/valbert/StudioProjects/contato/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4b76c25be8d3749262195e2c5cd2e0c39f62a97c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/valbert/.android/build-cache/988e1c85b12bbb8ab1e565d770677ce16a932640/output/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Users/valbert/StudioProjects/contato/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_5e9ef2a1e9bce6ea47956eb20d605f714f4425da/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/valbert/.android/build-cache/1074447bea4b1f244b3629c739aa0324ebc1f076/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/valbert/StudioProjects/contato/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1661cb3698bc351d8a898bd51b7658dcfbe1702d/classes.dex" />
+    </item>
+
+</items>
