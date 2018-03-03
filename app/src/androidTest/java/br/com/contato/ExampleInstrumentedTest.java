@@ -23,4 +23,6 @@ public class ExampleInstrumentedTest {
 
         assertEquals("br.com.contato", appContext.getPackageName());
     }
+
+
 }
