@@ -25,11 +25,14 @@ public class AppOpenHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(ContatoDAO.SCRIPT_CRIAR_TABELA);
+        db.execSQL(CategoriaDAO.SCRIPT_CRIAR_TABELA);
+        db.execSQL(CategoriaDAO.SCRIPT_INICIAL);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int versaoAntiga, int versaoNova) {
         db.execSQL(ContatoDAO.SCRIPT_DELETE);
+        db.execSQL(CategoriaDAO.SCRIPT_DELETE);
         onCreate(db);
     }
 }

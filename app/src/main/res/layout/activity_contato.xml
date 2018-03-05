@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="15dp"
+    android:orientation="vertical"
+    tools:context="br.com.contato.activitys.ContatoActivity">
+
+    <EditText
+        android:id="@+id/tv_nome"
+        style="@style/estiloTextView"
+        android:hint="@string/nome" />
+
+    <EditText
+        android:id="@+id/tv_telefone"
+        style="@style/estiloTextView"
+        android:hint="@string/telefone" />
+
+    <EditText
+        android:id="@+id/tv_celular"
+        style="@style/estiloTextView"
+        android:hint="@string/celular" />
+
+    <EditText
+        android:id="@+id/tv_email"
+        style="@style/estiloTextView"
+        android:hint="@string/email" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/salvar"
+            style="@style/estiloBotao"
+            android:text="@string/salvar" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

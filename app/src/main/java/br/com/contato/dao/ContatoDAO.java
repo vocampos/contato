@@ -10,10 +10,6 @@ import java.util.List;
 
 import br.com.contato.modelo.Contato;
 
-/**
- * Created by Valbert Campos  on 28/02/18.
- * valbert.sistemas@gmail.com
- */
 public class ContatoDAO {
 
     private static final String NOME_TABELA = "TB_CONTATO";
@@ -52,6 +48,13 @@ public class ContatoDAO {
         this.database = openHelper.getWritableDatabase();
     }
 
+    public boolean salvar(Contato contato) {
+        if (contato.getId() > 0)
+            return atualizar(contato);
+
+        return inserir(contato);
+    }
+
     public boolean inserir(Contato contato) {
         ContentValues cv = prepararContentValues(contato);
         Long id = database.insert(NOME_TABELA, null, cv);
@@ -59,7 +62,7 @@ public class ContatoDAO {
         return id > 0;
     }
 
-    public Contato recuperar(int id) {
+    public Contato recuperar(long id) {
         String colunas[] = { CL_ID, CL_NOME, CL_EMAIL, CL_TELEFONE, CL_CELULAR, CL_FOTO };
         String[] valorCondicoes = {String.valueOf(id)};
 
@@ -86,7 +89,7 @@ public class ContatoDAO {
         return qtdAlteracao > 0;
     }
 
-     public boolean deletar(int id) {
+     public boolean deletar(long id) {
          String[] valoresParaSubstituir = {String.valueOf(id)};
          int delete =  database.delete(NOME_TABELA, CL_ID + "=?", valoresParaSubstituir);
          return delete > 0;
@@ -101,7 +104,6 @@ public class ContatoDAO {
         cv.put(CL_EMAIL, contato.getEmail());
         cv.put(CL_TELEFONE, contato.getTelefone());
         cv.put(CL_CELULAR, contato.getCelular());
-        cv.put(CL_FOTO, contato.getFoto());
 
         return cv;
     }
@@ -130,7 +132,6 @@ public class ContatoDAO {
                     contato.setEmail(cursor.getString(indexEmail));
                     contato.setTelefone(cursor.getString(indexTelefone));
                     contato.setCelular(cursor.getString(indexCelular));
-                    contato.setFoto(cursor.getString(indexFoto));
 
                     contatos.add(contato);
 

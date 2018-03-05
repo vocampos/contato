@@ -1,18 +1,9 @@
 package br.com.contato.modelo;
 
 
-public class Contato {
+public class Contato extends Modelo {
 
-    private int id;
-    private String nome, email, telefone, celular, foto;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    private String nome, email, telefone, celular;
 
     public String getNome() {
         return nome;
@@ -46,23 +37,4 @@ public class Contato {
         this.celular = celular;
     }
 
-    public String getFoto() {
-        return foto;
-    }
-
-    public void setFoto(String foto) {
-        this.foto = foto;
-    }
-
-    @Override
-    public String toString() {
-        return "Contato{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", email='" + email + '\'' +
-                ", telefone='" + telefone + '\'' +
-                ", celular='" + celular + '\'' +
-                ", foto='" + foto + '\'' +
-                '}';
-    }
 }
