@@ -34,13 +34,14 @@ public class ContatoDAO {
     private AppOpenHelper openHelper;
     private SQLiteDatabase database;
 
-    private static ContatoDAO instace;
 
-    public static ContatoDAO getInstace(Context context) {
-        if (instace == null) {
-            instace = new ContatoDAO(context);
+    private static ContatoDAO instance;
+
+    public static ContatoDAO getInstance(Context context) {
+        if (instance == null) {
+            instance = new ContatoDAO(context);
         }
-        return instace;
+        return instance;
     }
 
     private ContatoDAO(Context context) {
@@ -63,7 +64,7 @@ public class ContatoDAO {
     }
 
     public Contato recuperar(long id) {
-        String colunas[] = { CL_ID, CL_NOME, CL_EMAIL, CL_TELEFONE, CL_CELULAR, CL_FOTO };
+        String colunas[] = { CL_ID, CL_NOME, CL_EMAIL, CL_TELEFONE, CL_CELULAR };
         String[] valorCondicoes = {String.valueOf(id)};
 
         Cursor cursor = database.query(NOME_TABELA, colunas, CL_ID + "=?", valorCondicoes, null, null, null);
@@ -77,7 +78,7 @@ public class ContatoDAO {
     }
 
     public List<Contato> listarTodos() {
-        String sql = "SELECT * FROM " + NOME_TABELA;
+        String sql = "SELECT * FROM " + NOME_TABELA ;
         Cursor cursor = database.rawQuery(sql, null);
         return converterCursor(cursor);
     }
@@ -110,7 +111,7 @@ public class ContatoDAO {
 
     private List<Contato> converterCursor(Cursor cursor) {
 
-        List<Contato> contatos  = new ArrayList<Contato>();
+        List<Contato> contatos = new ArrayList<Contato>();
 
         if (cursor == null) {
             return contatos;
@@ -123,8 +124,7 @@ public class ContatoDAO {
                     int indexNome = cursor.getColumnIndex(CL_NOME);
                     int indexEmail = cursor.getColumnIndex(CL_EMAIL);
                     int indexTelefone = cursor.getColumnIndex(CL_TELEFONE);
-                    int indexCelular = cursor.getColumnIndex(CL_TELEFONE);
-                    int indexFoto = cursor.getColumnIndex(CL_TELEFONE);
+                    int indexCelular = cursor.getColumnIndex(CL_CELULAR);
 
                     Contato contato = new Contato();
                     contato.setId(cursor.getInt(indexID));

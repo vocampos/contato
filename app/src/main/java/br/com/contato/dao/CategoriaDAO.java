@@ -35,7 +35,7 @@ public class CategoriaDAO extends GenericoDAO <Categoria> {
 
     @Override
     public String getNomeTabela() {
-        return CL_DESCRICAO;
+        return NOME_TABELA;
     }
 
     @Override

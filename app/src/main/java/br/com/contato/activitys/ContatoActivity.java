@@ -10,7 +10,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import br.com.contato.R;
+import br.com.contato.dao.CategoriaDAO;
 import br.com.contato.dao.ContatoDAO;
+import br.com.contato.modelo.Categoria;
 import br.com.contato.modelo.Contato;
 import br.com.contato.util.MaskEditUtil;
 
@@ -26,6 +28,7 @@ public class ContatoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_contato);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         configurarComponentes();
+        configurarValores();
     }
 
     @Override
@@ -38,6 +41,16 @@ public class ContatoActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private void configurarValores() {
+        contato = (Contato) getIntent().getSerializableExtra("contatoSelecionado");
+        if (contato != null) {
+            etNome.setText(contato.getNome());
+            etCelular.setText(contato.getCelular());
+            etTelefone.setText(contato.getTelefone());
+            etEmail.setText(contato.getEmail());
+        }
+    }
+
     private Contato recuperarContato() {
         if(contato == null) {
             contato = new Contato();
@@ -45,8 +58,8 @@ public class ContatoActivity extends AppCompatActivity {
 
         contato.setNome(etNome.getText().toString());
         contato.setEmail(etEmail.getText().toString());
-        contato.setTelefone(etCelular.getText().toString());
-        contato.setCelular(etTelefone.getText().toString());
+        contato.setTelefone(etTelefone.getText().toString());
+        contato.setCelular(etCelular.getText().toString());
         return contato;
     }
 
@@ -57,7 +70,7 @@ public class ContatoActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Context context = ContatoActivity.this;
-                ContatoDAO dao = ContatoDAO.getInstace(context);
+                ContatoDAO dao = ContatoDAO.getInstance(context);
                 Contato contato = recuperarContato();
 
                 if (dao.salvar(contato)) {

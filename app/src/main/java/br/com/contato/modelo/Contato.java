@@ -37,4 +37,8 @@ public class Contato extends Modelo {
         this.celular = celular;
     }
 
+    @Override
+    public String toString() {
+        return nome;
+    }
 }
