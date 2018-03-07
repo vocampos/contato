@@ -66,15 +66,22 @@ public class AnuncioActivity extends AppCompatActivity {
         listaCategorias.add(0, categoria);
 
         ArrayAdapter<Categoria> adapterCategoria = new ArrayAdapter<Categoria>(
-                this, android.R.layout.simple_spinner_dropdown_item, listaCategorias);
+                this, android.R.layout.simple_spinner_dropdown_item,
+                listaCategorias);
 
         spCategoria.setAdapter(adapterCategoria);
 
-        spCategoria.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spCategoria.setOnItemSelectedListener(new AdapterView.
+                OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+            public void onItemSelected(AdapterView<?> adapterView,
+                                       View view, int position, long l) {
+
                 categoriaSelecionada = listaCategorias.get(position);
-                Toast.makeText(AnuncioActivity.this, categoriaSelecionada.getDescricao(), Toast.LENGTH_SHORT).show();
+
+                Toast.makeText(AnuncioActivity.this,
+                        categoriaSelecionada.getDescricao(),
+                        Toast.LENGTH_SHORT).show();
             }
 
             @Override
