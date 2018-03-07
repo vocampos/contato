@@ -56,6 +56,11 @@ public abstract class GenericoDAO <C extends Modelo> {
         return result.isEmpty() ? null : result.get(0);
     }
 
+    public List<C> listarTodos() {
+        String sql = "SELECT * FROM " + getNomeTabela();
+        return recuperarPorQuery(sql);
+    }
+
     public List<C> recuperarPorQuery(String query) {
 
         Cursor cursor = dataBase.rawQuery(query, null);

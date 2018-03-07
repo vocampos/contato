@@ -7,4 +7,8 @@
     <string name="salvar">Salvar</string>
     <string name="mensagem_sucesso">Operação realizada com sucesso!</string>
     <string name="add_contato">Adicionar Contato</string>
+    <string name="add_anuncio">Adicionar Anuncio</string>
+    <string name="titulo">Título do Anuncio</string>
+    <string name="descricao">Descricao do Anuncio</string>
+    <string name="preco">Preço</string>
 </resources>

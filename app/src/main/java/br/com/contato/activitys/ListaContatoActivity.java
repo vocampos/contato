@@ -20,6 +20,7 @@ import br.com.contato.modelo.Contato;
 public class ListaContatoActivity extends AppCompatActivity {
 
     private ListView listView;
+    private List<Contato> listaContato;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,14 +29,6 @@ public class ListaContatoActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         listView = (ListView) findViewById(R.id.lista_contato);
-
-        ContatoDAO contatoDAO = ContatoDAO.getInstance(this);
-        final List<Contato> listaContato = contatoDAO.listarTodos();
-
-        ArrayAdapter<Contato> arrayAdapter = new ArrayAdapter<Contato>(this,
-                android.R.layout.simple_list_item_1, listaContato);
-
-        listView.setAdapter(arrayAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -50,8 +43,20 @@ public class ListaContatoActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
 
+        ContatoDAO contatoDAO = ContatoDAO.getInstance(this);
+
+        listaContato = contatoDAO.listarTodos();
+
+        ArrayAdapter<Contato> arrayAdapter = new ArrayAdapter<Contato>(this,
+                android.R.layout.simple_list_item_1, listaContato);
+
+        listView.setAdapter(arrayAdapter);
     }
 
     @Override
@@ -70,6 +75,10 @@ public class ListaContatoActivity extends AppCompatActivity {
             case R.id.add_contato:
                 Intent intent = new Intent(ListaContatoActivity.this, ContatoActivity.class);
                 startActivity(intent);
+                return true;
+            case R.id.add_anuncio:
+
+                startActivity(new Intent(ListaContatoActivity.this, AnuncioActivity.class));
                 return true;
 
         }

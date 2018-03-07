@@ -17,12 +17,9 @@ public class CategoriaDAO extends GenericoDAO <Categoria> {
 
     public static final String SCRIPT_DELETE = "DROP TABLE IF EXISTIS "+ NOME_TABELA;
 
-    public static final String SCRIPT_INICIAL = "" +
-            "INSERT INTO " + NOME_TABELA + "( " + CL_DESCRICAO + " ) VALUES ('Animais');" +
-            "INSERT INTO " + NOME_TABELA + "( " + CL_DESCRICAO + " ) VALUES ('Automóveis');" +
-            "INSERT INTO " + NOME_TABELA + "( " + CL_DESCRICAO + " ) VALUES ('Imóveis'); " +
-            "INSERT INTO " + NOME_TABELA + "( " + CL_DESCRICAO + " ) VALUES ('Educação');" +
-            "INSERT INTO " + NOME_TABELA + "( " + CL_DESCRICAO + " ) VALUES ('Esportes'); " ;
+    public static final String SCRIPT_INICIAL =
+            "INSERT INTO " + NOME_TABELA + " ( " + CL_DESCRICAO + " ) VALUES ('Animais') , ('Automóveis') , " +
+            "('Imóveis') , ('Educação'), ('Esportes'); " ;
 
     public CategoriaDAO(Context context) {
         super(context);
