@@ -51,8 +51,6 @@ public class Anuncio extends Modelo {
 
     @Override
     public String toString() {
-        return "Anuncio{" +
-                "titulo='" + titulo + '\'' +
-                '}';
+        return titulo;
     }
 }

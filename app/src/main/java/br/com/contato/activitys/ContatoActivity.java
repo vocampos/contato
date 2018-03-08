@@ -1,7 +1,10 @@
 package br.com.contato.activitys;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,6 +18,7 @@ import br.com.contato.dao.ContatoDAO;
 import br.com.contato.modelo.Categoria;
 import br.com.contato.modelo.Contato;
 import br.com.contato.util.MaskEditUtil;
+import br.com.contato.util.Util;
 
 public class ContatoActivity extends AppCompatActivity {
 
@@ -35,7 +39,7 @@ public class ContatoActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                finish();
+                alertarMensagem();
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -88,5 +92,28 @@ public class ContatoActivity extends AppCompatActivity {
         etCelular.addTextChangedListener(MaskEditUtil.mask(etCelular, MaskEditUtil.FORMAT_FONE));
         etTelefone.addTextChangedListener(MaskEditUtil.mask(etTelefone, MaskEditUtil.FORMAT_FONE));
     }
+
+
+    private void alertarMensagem() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setIcon(R.mipmap.ic_launcher);
+        builder.setMessage("Deseja realmente sair do app?")
+                .setNegativeButton("NAO", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                        dialog.dismiss();
+                    }
+                });
+
+        builder.setPositiveButton("SIM", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+                finish();
+            }
+        });
+        builder.create().show();
+
+    }
+
 
 }

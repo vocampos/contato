@@ -11,4 +11,6 @@
     <string name="titulo">Título do Anuncio</string>
     <string name="descricao">Descricao do Anuncio</string>
     <string name="preco">Preço</string>
+    <string name="anuncio">Anuncio</string>
+    <string name="lista_anuncio">Lista de Anuncios</string>
 </resources>

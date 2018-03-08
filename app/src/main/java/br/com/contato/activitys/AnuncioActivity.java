@@ -2,10 +2,12 @@ package br.com.contato.activitys;
 
 import android.Manifest;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -17,9 +19,11 @@ import android.widget.Toast;
 import java.util.List;
 
 import br.com.contato.R;
+import br.com.contato.dao.AnuncioDAO;
 import br.com.contato.dao.CategoriaDAO;
 import br.com.contato.modelo.Anuncio;
 import br.com.contato.modelo.Categoria;
+import br.com.contato.util.MaskEditUtil;
 import br.com.contato.util.Util;
 
 
@@ -40,9 +44,26 @@ public class AnuncioActivity extends AppCompatActivity {
         recuperarCamposDeTela();
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+
+                startActivity(new Intent(AnuncioActivity.this,
+                        ListaAnuncioActivity.class));
+
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
     private void recuperarCamposDeTela() {
         edTitulo = (EditText) findViewById(R.id.ed_titulo);
         edPreco = (EditText) findViewById(R.id.ed_preco);
+        edPreco.addTextChangedListener(MaskEditUtil.monetario(edPreco));
+
         edDescricao = (EditText) findViewById(R.id.ed_descricao);
         imFoto = (ImageView) findViewById(R.id.iv_foto);
 
@@ -94,11 +115,24 @@ public class AnuncioActivity extends AppCompatActivity {
 
     public void onClickSalvar(View view) {
 
+        Anuncio anuncio = recuperarValoresDosCamposTela();
+        AnuncioDAO anuncioDAO = new AnuncioDAO(this);
+
+        if (anuncioDAO.salvar(anuncio)) {
+
+            Toast.makeText(this, this.getString(R.string.mensagem_sucesso),
+                    Toast.LENGTH_LONG).show();
+        }
     }
 
     private Anuncio recuperarValoresDosCamposTela() {
-        return null;
+        Anuncio anuncio = new Anuncio();
+        anuncio.setDescricao(edDescricao.getText().toString());
+        anuncio.setPreco(edPreco.getText().toString());
+        anuncio.setTitulo(edTitulo.getText().toString());
+        anuncio.setCategoria(categoriaSelecionada);
 
+        return anuncio;
     }
 
 

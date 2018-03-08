@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activitys.ContatoActivity"/>
-        <activity android:name=".activitys.AnuncioActivity"/>
+        <activity android:label="@string/anuncio" android:name=".activitys.AnuncioActivity"/>
+        <activity android:name=".activitys.ListaAnuncioActivity"/>
     </application>
 
 </manifest>

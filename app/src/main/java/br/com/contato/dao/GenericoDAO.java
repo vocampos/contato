@@ -14,10 +14,13 @@ import br.com.contato.modelo.Modelo;
 public abstract class GenericoDAO <C extends Modelo> {
 
     private SQLiteDatabase dataBase;
+    private Context context;
+
 
     public GenericoDAO(Context context) {
         AppOpenHelper helper =  AppOpenHelper.getInstancia(context);
         dataBase = helper.getWritableDatabase();
+        this.context = context;
     }
 
     public boolean salvar(C modelo) {
@@ -77,6 +80,9 @@ public abstract class GenericoDAO <C extends Modelo> {
         return result;
     }
 
+    public Context getContext() {
+        return context;
+    }
 
     public abstract String getNomeColunaPrimaryKey();
     public abstract String getNomeTabela();
