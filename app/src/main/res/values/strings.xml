@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Contato</string>
+    <string name="app_name">Vende Fácil</string>
     <string name="nome">Nome:</string>
     <string name="email">E-mail:</string>
     <string name="celular">Celular:</string>
@@ -13,4 +13,8 @@
     <string name="preco">Preço</string>
     <string name="anuncio">Anuncio</string>
     <string name="lista_anuncio">Lista de Anuncios</string>
+    <string name="pesquisar">Pesquisar</string>
+    <string name="deseja_sair">Deseja realmente sair do app?</string>
+    <string name="nao">NÃO</string>
+    <string name="sim">SIM</string>
 </resources>

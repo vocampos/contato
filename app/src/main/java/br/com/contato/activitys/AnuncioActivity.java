@@ -100,9 +100,6 @@ public class AnuncioActivity extends AppCompatActivity {
 
                 categoriaSelecionada = listaCategorias.get(position);
 
-                Toast.makeText(AnuncioActivity.this,
-                        categoriaSelecionada.getDescricao(),
-                        Toast.LENGTH_SHORT).show();
             }
 
             @Override

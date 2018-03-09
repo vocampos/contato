@@ -1,54 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="15dp"
-    android:orientation="vertical">
-
-    <ImageView
-        android:id="@+id/iv_foto"
-        android:src="@drawable/sem_foto"
-        android:layout_width="match_parent"
-        android:layout_height="180dp" />
-
-    <EditText
-        android:id="@+id/ed_titulo"
-        android:hint="@string/titulo"
-        style="@style/estiloTextView" />
-
-    <EditText
-        android:id="@+id/ed_descricao"
-        android:hint="@string/descricao"
-        android:inputType="text|textMultiLine"
-        android:layout_height="40dp"
-        style="@style/estiloTextView" />
-
-    <EditText
-        android:id="@+id/ed_preco"
-        android:hint="@string/preco"
-        android:inputType="number"
-        style="@style/estiloTextView" />
-
-    <Spinner
-        android:id="@+id/sp_categoria"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:gravity="bottom"
+        android:layout_height="match_parent"
+        android:layout_margin="15dp"
         android:orientation="vertical">
 
-        <Button
-            android:onClick="onClickSalvar"
-            android:id="@+id/salvar"
-            style="@style/estiloBotao"
-            android:text="@string/salvar" />
+        <ImageView
+            android:id="@+id/iv_foto"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/sem_foto" />
+
+        <EditText
+            android:id="@+id/ed_titulo"
+            style="@style/estiloTextView"
+            android:hint="@string/titulo" />
+
+        <EditText
+            android:id="@+id/ed_descricao"
+            style="@style/estiloTextView"
+            android:layout_height="140dp"
+            android:gravity="top"
+            android:hint="@string/descricao"
+            android:inputType="text|textMultiLine" />
+
+        <EditText
+            android:id="@+id/ed_preco"
+            style="@style/estiloTextView"
+            android:hint="@string/preco"
+            android:inputType="number" />
+
+        <Spinner
+            android:id="@+id/sp_categoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/salvar"
+                style="@style/estiloBotao"
+                android:onClick="onClickSalvar"
+                android:text="@string/salvar" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
-
-</LinearLayout>
+</ScrollView>
