@@ -89,7 +89,6 @@ public class AnuncioActivity extends AppCompatActivity {
 
         spCategoria = (Spinner) findViewById(R.id.sp_categoria);
 
-
         CategoriaDAO categoriaDAO = new CategoriaDAO(this);
         listaCategorias = categoriaDAO.listarTodos();
 
