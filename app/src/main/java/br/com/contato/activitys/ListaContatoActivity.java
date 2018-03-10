@@ -60,7 +60,7 @@ public class ListaContatoActivity extends AppCompatActivity {
                 3º parâmetro: Nele informamos o order, ou seja, a posição que queremos ordenar o menu.
                 4º parâmetro: Indica o nome que será exibido para o menu.
                 */
-                contextMenu.add(Menu.NONE, 1, Menu.NONE, "deletar");
+                contextMenu.add(Menu.NONE, 1, Menu.NONE, "Deletar");
                 contextMenu.add(Menu.NONE, 2, Menu.NONE, "Alterar");
             }
 

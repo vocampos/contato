@@ -22,6 +22,7 @@ import br.com.contato.R;
 import br.com.contato.dao.AnuncioDAO;
 import br.com.contato.dao.CategoriaDAO;
 import br.com.contato.modelo.Anuncio;
+import br.com.contato.modelo.CameraResultado;
 import br.com.contato.modelo.Categoria;
 import br.com.contato.util.MaskEditUtil;
 import br.com.contato.util.Util;
@@ -34,6 +35,7 @@ public class AnuncioActivity extends AppCompatActivity {
     private Spinner spCategoria;
     private List<Categoria> listaCategorias;
     private Categoria categoriaSelecionada;
+    private String base64FotoAnuncio;
 
 
     @Override
@@ -58,6 +60,17 @@ public class AnuncioActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        CameraResultado cameraResultado = Util.getImageCameraOrGallery(data, this);
+
+        if (cameraResultado != null) {
+            imFoto.setImageBitmap(cameraResultado.getFotoBitmap());
+            base64FotoAnuncio = cameraResultado.getFotoBase64();
+        }
+
+    }
 
     private void recuperarCamposDeTela() {
         edTitulo = (EditText) findViewById(R.id.ed_titulo);
@@ -70,7 +83,7 @@ public class AnuncioActivity extends AppCompatActivity {
         imFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(AnuncioActivity.this, "OK", Toast.LENGTH_SHORT).show();
+              Util.openPhoto(Util.CameraOptions.GET_IMAGE_CODE, AnuncioActivity.this);
             }
         });
 
@@ -128,6 +141,7 @@ public class AnuncioActivity extends AppCompatActivity {
         anuncio.setPreco(edPreco.getText().toString());
         anuncio.setTitulo(edTitulo.getText().toString());
         anuncio.setCategoria(categoriaSelecionada);
+        anuncio.setFoto(base64FotoAnuncio);
 
         return anuncio;
     }
