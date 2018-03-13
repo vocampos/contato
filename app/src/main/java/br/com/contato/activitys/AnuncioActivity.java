@@ -7,12 +7,16 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -36,6 +40,10 @@ public class AnuncioActivity extends AppCompatActivity {
     private List<Categoria> listaCategorias;
     private Categoria categoriaSelecionada;
     private String base64FotoAnuncio;
+    private Anuncio anuncioSelecionado;
+    private String acao = null;
+    private Button button;
+    private LinearLayout agrupador;
 
 
     @Override
@@ -44,6 +52,44 @@ public class AnuncioActivity extends AppCompatActivity {
         setContentView(R.layout.activity_anuncio);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         recuperarCamposDeTela();
+        preencherCamposDaTela();
+    }
+
+    private void preencherCamposDaTela() {
+
+        anuncioSelecionado = (Anuncio) getIntent().getSerializableExtra("anuncioSelecionado");
+
+        acao = getIntent().getStringExtra("acao");
+
+        if (anuncioSelecionado != null) {
+
+            base64FotoAnuncio = anuncioSelecionado.getFoto();
+
+            edTitulo.setText(anuncioSelecionado.getTitulo());
+            edDescricao.setText(anuncioSelecionado.getDescricao());
+            edPreco.setText(anuncioSelecionado.getPreco());
+
+            if (!TextUtils.isEmpty(anuncioSelecionado.getFoto())) {
+                Util.preencherBase64(anuncioSelecionado.getFoto(), imFoto);
+            }
+
+            if (anuncioSelecionado.getCategoria() != null) {
+                spCategoria.setSelection((int) anuncioSelecionado.getCategoria().getId());
+            }
+        }
+
+        if (!TextUtils.isEmpty(acao)) {
+            if (acao.equals("atualizar")) {
+
+                Log.i("Atualizando", anuncioSelecionado.toString());
+                for (int i=0; i < agrupador.getChildCount(); i++) {
+                    View view = agrupador.getChildAt(i);
+                    view.setEnabled(false);
+                }
+                button.setVisibility(View.GONE);
+
+            }
+        }
     }
 
     @Override
@@ -73,6 +119,10 @@ public class AnuncioActivity extends AppCompatActivity {
     }
 
     private void recuperarCamposDeTela() {
+        button = (Button) findViewById(R.id.salvar);
+
+        agrupador = (LinearLayout) findViewById(R.id.agrupador);
+
         edTitulo = (EditText) findViewById(R.id.ed_titulo);
         edPreco = (EditText) findViewById(R.id.ed_preco);
         edPreco.addTextChangedListener(MaskEditUtil.monetario(edPreco));
@@ -141,6 +191,10 @@ public class AnuncioActivity extends AppCompatActivity {
         anuncio.setTitulo(edTitulo.getText().toString());
         anuncio.setCategoria(categoriaSelecionada);
         anuncio.setFoto(base64FotoAnuncio);
+
+        if (anuncioSelecionado != null) {
+            anuncio.setId(anuncioSelecionado.getId());
+        }
 
         return anuncio;
     }

@@ -1,6 +1,7 @@
 package br.com.contato.adapters;
 
 import android.app.Activity;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -12,6 +13,7 @@ import java.util.List;
 
 import br.com.contato.R;
 import br.com.contato.modelo.Anuncio;
+import br.com.contato.util.Util;
 
 
 public class AnuncioAdapter extends BaseAdapter {
@@ -54,6 +56,10 @@ public class AnuncioAdapter extends BaseAdapter {
         tvTitulo.setText(anuncio.getTitulo());
         tvPreco.setText(anuncio.getPreco());
         tvDescricao.setText(anuncio.getDescricao());
+
+        if (!TextUtils.isEmpty(anuncio.getFoto())) {
+            Util.preencherBase64(anuncio.getFoto(), imAnuncio);
+        }
 
         return itemLista;
     }

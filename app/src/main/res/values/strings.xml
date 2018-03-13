@@ -17,4 +17,6 @@
     <string name="deseja_sair">Deseja realmente sair do app?</string>
     <string name="nao">NÃO</string>
     <string name="sim">SIM</string>
+    <string name="deletar">Deletar</string>
+    <string name="alterar">Alterar</string>
 </resources>

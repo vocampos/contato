@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -27,6 +28,7 @@ public class ListaContatoActivity extends AppCompatActivity {
 
     private ListView listView;
     private List<Contato> listaContato;
+    private ArrayAdapter<Contato> arrayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +45,9 @@ public class ListaContatoActivity extends AppCompatActivity {
 
                 Contato contato = listaContato.get(position);
 
-                Intent intent = new Intent(ListaContatoActivity.this, ContatoActivity.class);
+                Intent intent = new Intent(ListaContatoActivity.this,
+                        ContatoActivity.class);
+
                 intent.putExtra("contatoSelecionado", contato);
 
                 startActivity(intent);
@@ -52,25 +56,48 @@ public class ListaContatoActivity extends AppCompatActivity {
 
         listView.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
             @Override
-            public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
+            public void onCreateContextMenu(ContextMenu contextMenu,
+               View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
 
-                /*
-                1º parâmetro: Refere-se ao groupId.
-                2º parâmetro: Nesse parâmetro enviamos o ItemId que é justamente o id do menu, ou seja, é por meio dele que identificaremos esse menu.
-                3º parâmetro: Nele informamos o order, ou seja, a posição que queremos ordenar o menu.
-                4º parâmetro: Indica o nome que será exibido para o menu.
-                */
-                contextMenu.add(Menu.NONE, 1, Menu.NONE, "Deletar");
-                contextMenu.add(Menu.NONE, 2, Menu.NONE, "Alterar");
+                contextMenu.add(Menu.NONE, 1, Menu.NONE, getString(R.string.deletar));
+                contextMenu.add(Menu.NONE, 2, Menu.NONE, getString(R.string.alterar));
+/*
+                AdapterView.AdapterContextMenuInfo info
+                        = (AdapterView.AdapterContextMenuInfo) contextMenuInfo;
+
+                contatoSelecionado = (Contato) listView.getAdapter().getItem(info.position);
+
+               Toast.makeText(ListaContatoActivity.this, contatoSelecionado.getNome() , Toast.LENGTH_LONG).show();
+*/
             }
 
         });
+
+       /*
+        1º parâmetro: Refere-se ao groupId.
+        2º parâmetro: Nesse parâmetro enviamos o ItemId que é justamente o id do menu, ou seja, é por meio dele que identificaremos esse menu.
+        3º parâmetro: Nele informamos o order, ou seja, a posição que queremos ordenar o menu.
+        4º parâmetro: Indica o nome que será exibido para o menu.
+        */
     }
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
 
-        Toast.makeText(this, item.getItemId() + " " + item.getTitle(), Toast.LENGTH_SHORT).show();
+        AdapterView.AdapterContextMenuInfo info =
+                (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+
+        Contato contatoSelecionado = (Contato) listView.getAdapter()
+                .getItem(info.position);
+
+        Toast.makeText(ListaContatoActivity.this,
+                contatoSelecionado.getNome(),
+                Toast.LENGTH_LONG).show();
+
+
+        if (item.getItemId() == 1) {
+
+        }
 
         return super.onContextItemSelected(item);
     }
@@ -84,7 +111,7 @@ public class ListaContatoActivity extends AppCompatActivity {
 
         listaContato = contatoDAO.listarTodos();
 
-        ArrayAdapter<Contato> arrayAdapter = new ArrayAdapter<Contato>(this,
+        arrayAdapter = new ArrayAdapter<Contato>(this,
                 android.R.layout.simple_list_item_1, listaContato);
 
         listView.setAdapter(arrayAdapter);
